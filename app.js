@@ -7,6 +7,8 @@ function getComputerChoice() {
     const randomComputerHand = hands[randomIndex];
     console.log(randomComputerHand);
     
+    return randomComputerHand;
+    
     // const computerChoice = Math.floor(Math.random() * 3);
     // console.log(computerChoice);
 }
