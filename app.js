@@ -13,8 +13,14 @@ function game() {
         // const computerChoice = Math.floor(Math.random() * 3);
         // console.log(computerChoice);
     }
+
+    function getPlayerChoice() {
+        const playerChoice = prompt("Choose rock, paper or scissors");
+        console.log(playerChoice);
+    }
     
     getComputerChoice();
+    getPlayerChoice();
 }
 
 game();
