@@ -11,8 +11,8 @@ function game() {
 
       return computerChoice;
 
-      // const computerChoice = Math.floor(Math.random() * 3);
-      // console.log(computerChoice);
+    //   const computerChoice = Math.floor(Math.random() * 3);
+    //   console.log(computerChoice);
     };
 
     const getPlayerChoice = function () {
@@ -33,6 +33,8 @@ function game() {
     getPlayerChoice();
 
     const decideWinningHand = function (computerChoice, playerChoice) {
+        console.log(computerChoice);
+        console.log(playerChoice);
       if (computerChoice === playerChoice) {
         console.log("It's a tie!");
         return;
