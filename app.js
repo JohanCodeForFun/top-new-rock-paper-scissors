@@ -1,3 +1,13 @@
+window.onload = (event) => {
+  console.log('Get Ready! The Game will start in...');
+  console.log('3... 2... 1...');
+  
+  setTimeout(() => {
+    game();
+  }, 3000)
+};
+
+
 function game() {
   const hands = ["rock", "paper", "scissors"];
   let playerChoice;
@@ -66,4 +76,4 @@ function game() {
   };
   playRound();
 }
-game();
+
