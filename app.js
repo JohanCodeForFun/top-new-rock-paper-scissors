@@ -13,27 +13,26 @@ function game() {
       console.log(`Computer score: ${computerScore}`);
       console.log("--------------");
 
+      const getPlayerChoice = function () {
+        let playerChoice = prompt("Choose rock, paper or scissors");
+
+        // remove after validation function is done
+        // console.log(`Player choose: ${playerChoice}`);
+        return playerChoice;
+      };
+
       const getComputerChoice = function () {
         const randomComputerChoice = Math.random();
         const totalHands = hands.length;
         const randomIndex = Math.floor(randomComputerChoice * totalHands);
         const computerChoice = hands[randomIndex];
-
-        console.log(`Computer choose: ${computerChoice}`);
         return computerChoice;
       };
 
-      const getPlayerChoice = function () {
-        let playerChoice = prompt("Choose rock, paper or scissors");
-
-        console.log(`Player choose: ${playerChoice}`);
-        return playerChoice;
-      };
-
       function decideWinningHand(computerChoice, playerChoice) {
-        console.log(
-          `computer choose: ${computerChoice} while player choose: ${playerChoice}`
-        );
+        console.log(`Computer choose: ${computerChoice}`);
+        console.log(`Player choose: ${playerChoice}`);
+
         if (computerChoice === playerChoice) {
           console.log("It's a tie!");
           return;
@@ -54,17 +53,17 @@ function game() {
             playerScore++;
             return;
           } else {
-            console.log("Computer wins!");
+            console.log(
+              `Computer wins! ${computerChoice} beats ${playerChoice}`
+            );
             computerScore++;
             return;
           }
         }
       }
-
       decideWinningHand(getComputerChoice(), getPlayerChoice());
     }
   };
-
   playRound();
 }
 game();
