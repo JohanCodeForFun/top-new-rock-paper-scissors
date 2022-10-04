@@ -2,10 +2,18 @@ function game() {
   const hands = ["rock", "paper", "scissors"];
   let playerChoice;
   let computerChoice;
-  let score = 0;
-  let roundsPlayed;
+  let computerScore = 0;
+  let playerScore = 0;
 
   const playRound = function () {
+    for (let i = 1; i <= 5; i++) {
+      console.log("--------------")
+      console.log("Round: "  +i);
+      console.log(`Player score: ${playerScore}`)
+      console.log(`Computer score: ${computerScore}`)
+      console.log("--------------")
+
+
     const getComputerChoice = function () {
       const randomComputerChoice = Math.random();
       const totalHands = hands.length;
@@ -33,15 +41,19 @@ function game() {
       } else {
         if (computerChoice === "rock" && playerChoice === "paper") {
           console.log("Player wins! Paper beats rock");
+          playerScore++;
           return;
         } else if (computerChoice === "paper" && playerChoice === "scissors") {
           console.log("Player wins! Scissors beats paper");
+          playerScore++;
           return;
         } else if (computerChoice === "scissors" && playerChoice === "rock") {
           console.log("Player wins! Rock beats scissors");
+          playerScore++;
           return;
         } else {
           console.log("Computer wins!");
+          computerScore++;
           return;
         }
       }
@@ -49,6 +61,8 @@ function game() {
 
     decideWinningHand(getComputerChoice(), getPlayerChoice());
   };
+}
   playRound();
+
 }
 game();
