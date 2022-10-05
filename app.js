@@ -7,20 +7,6 @@
 //   }, 3000);
 // };
 
-const btnRock = document.getElementById('rock');
-const btnPaper = document.getElementById('paper');
-const btnScissors = document.getElementById('scissors');
-
-btnRock.addEventListener('click', function() {
-  console.log('click rock btn');
-})
-btnPaper.addEventListener('click', function() {
-  console.log('click paper btn');
-})
-btnScissors.addEventListener('click', function() {
-  console.log('click scissors btn');
-})
-
 
 function game() {
   const hands = ["rock", "paper", "scissors"];
@@ -29,16 +15,52 @@ function game() {
   let computerScore = 0;
   let playerScore = 0;
 
-  const playRound = function () {
+  const btnRock = document.getElementById('rock');
+  const btnPaper = document.getElementById('paper');
+  const btnScissors = document.getElementById('scissors');
 
-  };
+  // const showResult = document.getElementById('result-container');
+  // const resultContent = document.createElement('p');
+  // resultContent.textContent = "testin testing";
+  // showResult.appendChild(resultContent);
+
+  const sect = document.querySelector('section');
+  const para = document.createElement('p');
+  para.textContent = `Have fun playing!`;
+  sect.appendChild(para);
+  
+  btnRock.addEventListener('click', function() {
+    playerChoice = 'rock';
+    para.textContent = `Player choose: ${playerChoice} & 
+    Computer choose: ${computerChoice}`;
+    console.log(`Player choose: ${playerChoice}`);
+    return playerChoice
+  })
+  btnPaper.addEventListener('click', function() {
+    playerChoice = 'paper';
+    para.textContent = `Player choose: ${playerChoice} `;
+    console.log(`Player choose: ${playerChoice}`);
+    return playerChoice
+  })
+  btnScissors.addEventListener('click', function() {
+    playerChoice = 'scissors';
+    para.textContent = `Player choose: ${playerChoice} `;
+    console.log(`Player choose: ${playerChoice}`);
+    return playerChoice
+  })
+
+
+
+  // const playRound = function () {
+
+  // };
 
   const getPlayerChoice = function () {
-    let playerChoice = prompt("Choose rock, paper or scissors");
+    // let playerChoice = prompt("Choose rock, paper or scissors");
 
     // remove after validation function is done
     // console.log(`Player choose: ${playerChoice}`);
-    return playerChoice;
+
   };
 
   const getComputerChoice = function () {
@@ -78,4 +100,5 @@ function game() {
   }
   decideWinningHand(getComputerChoice(), getPlayerChoice());
 }
-playRound();
+// playRound();
+game();
