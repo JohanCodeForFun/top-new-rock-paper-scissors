@@ -1,13 +1,3 @@
-// window.onload = (event) => {
-//   console.log("Get Ready! The Game will start in...");
-//   console.log("3... 2... 1...");
-
-//   setTimeout(() => {
-//     game();
-//   }, 3000);
-// };
-
-function game() {
   const hands = ["rock", "paper", "scissors"];
   let playerChoice;
   let computerChoice;
@@ -28,11 +18,16 @@ function game() {
   para.textContent = `Have fun playing!`;
   sect.appendChild(para);
 
-  const playRound = function () {
-    if (playerScore === 3) {
-      alert("Player wins!");
-    } else if (computerScore === 3) {
-      para.textContent = "Computer wins!";
+  const playRound = function (playerChoice, computerChoice) {
+    for (let i = 0; i < 5; i++) {
+
+
+    function gameOver() {
+      if (playerScore === 3) {
+        alert("Player wins!");
+      } else if (computerScore === 3) {
+        alert("Computer --- wins!");
+      }
     }
 
     const getPlayerChoice = function () {
@@ -97,7 +92,8 @@ function game() {
       }
     }
     decideWinningHand(getComputerChoice(), getPlayerChoice());
+    gameOver();
   };
-  playRound();
 }
-game();
+
+  playRound();
