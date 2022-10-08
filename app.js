@@ -36,13 +36,13 @@ function playRound(computerChoice, playerChoice) {
   }
 }
 
+
+// show game & btn text 
 // const showResult = document.getElementById('result-container');
 // const resultContent = document.createElement('p');
 // resultContent.textContent = "testin testing";
 // showResult.appendChild(resultContent);
 
-
-// show game & btn text 
 const sect = document.querySelector("section");
 const para = document.createElement("p");
 para.textContent = `Have fun playing!`;
