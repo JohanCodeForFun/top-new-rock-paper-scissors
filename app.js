@@ -1,27 +1,25 @@
-  const hands = ["rock", "paper", "scissors"];
-  let playerChoice;
-  let computerChoice;
-  let computerScore = 0;
-  let playerScore = 0;
+const hands = ["rock", "paper", "scissors"];
+let playerChoice;
+let computerChoice;
+let computerScore = 0;
+let playerScore = 0;
 
-  const btnRock = document.getElementById("rock");
-  const btnPaper = document.getElementById("paper");
-  const btnScissors = document.getElementById("scissors");
+const btnRock = document.getElementById("rock");
+const btnPaper = document.getElementById("paper");
+const btnScissors = document.getElementById("scissors");
 
-  // const showResult = document.getElementById('result-container');
-  // const resultContent = document.createElement('p');
-  // resultContent.textContent = "testin testing";
-  // showResult.appendChild(resultContent);
+// const showResult = document.getElementById('result-container');
+// const resultContent = document.createElement('p');
+// resultContent.textContent = "testin testing";
+// showResult.appendChild(resultContent);
 
-  const sect = document.querySelector("section");
-  const para = document.createElement("p");
-  para.textContent = `Have fun playing!`;
-  sect.appendChild(para);
+const sect = document.querySelector("section");
+const para = document.createElement("p");
+para.textContent = `Have fun playing!`;
+sect.appendChild(para);
 
-  const playRound = function (playerChoice, computerChoice) {
-    for (let i = 0; i < 5; i++) {
-
-
+const playRound = function (playerChoice, computerChoice) {
+  for (let i = 0; i < 5; i++) {
     function gameOver() {
       if (playerScore === 3) {
         alert("Player wins!");
@@ -93,7 +91,7 @@
     }
     decideWinningHand(getComputerChoice(), getPlayerChoice());
     gameOver();
-  };
-}
+  }
+};
 
-  playRound();
+playRound();
