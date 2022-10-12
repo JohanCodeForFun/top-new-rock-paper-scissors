@@ -1,6 +1,4 @@
 const hands = ["rock", "paper", "scissors"];
-let playerChoice;
-let computerChoice;
 let computerScore = 0;
 let playerScore = 0;
 
@@ -14,26 +12,25 @@ function playRound(computerChoice, playerChoice) {
 
   if (computerChoice === playerChoice) {
     console.log("It's a tie!");
-    return;
   } else {
     if (computerChoice === "rock" && playerChoice === "paper") {
       console.log("Player wins! Paper beats rock");
       playerScore++;
-      return;
     } else if (computerChoice === "paper" && playerChoice === "scissors") {
       console.log("Player wins! Scissors beats paper");
       playerScore++;
-      return;
     } else if (computerChoice === "scissors" && playerChoice === "rock") {
       console.log("Player wins! Rock beats scissors");
       playerScore++;
-      return;
     } else {
       console.log(`Computer wins! ${computerChoice} beats ${playerChoice}`);
       computerScore++;
-      return;
     }
   }
+
+  gameOver();
+  return;
+
 }
 
 
@@ -57,12 +54,16 @@ function gameOver() {
   }
 }
 
-function getPlayerChoice() {
+
+function initiateButtonListeners() {
   btnRock.addEventListener("click", function () {
     playerChoice = "rock";
-    para.textContent = `Player choose: ${playerChoice} & 
-    Computer choose: ${computerChoice}`;
-    console.log(`Player choose: ${playerChoice}`);
+    para.textContent = `Player choose: ${playerChoice}`;
+
+    let computerChoice = getComputerChoice();
+
+    playRound(computerChoice, playerChoice);
+
     return playerChoice;
   });
   btnPaper.addEventListener("click", function () {
@@ -77,16 +78,14 @@ function getPlayerChoice() {
     console.log(`Player choose: ${playerChoice}`);
     return playerChoice;
   });
+
 };
 
 function getComputerChoice() {
   const randomComputerChoice = Math.random();
   const totalHands = hands.length;
   const randomIndex = Math.floor(randomComputerChoice * totalHands);
-  const computerChoice = hands[randomIndex];
-  return computerChoice;
+  return hands[randomIndex];
 };
 
-playRound(getComputerChoice(), getPlayerChoice());
-
-gameOver();
+initiateButtonListeners();
