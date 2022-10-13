@@ -12,18 +12,21 @@ function playRound(computerChoice, playerChoice) {
 
   if (computerChoice === playerChoice) {
     console.log("It's a tie!");
+    displayWinner.textContent = "= = =";
   } else {
     if (computerChoice === "rock" && playerChoice === "paper") {
+      displayWinner.textContent = "==>>";
       console.log("Player wins! Paper beats rock");
       playerScore++;
     } else if (computerChoice === "paper" && playerChoice === "scissors") {
-      console.log("Player wins! Scissors beats paper");
+      displayWinner.textContent = "==>>";
       playerScore++;
     } else if (computerChoice === "scissors" && playerChoice === "rock") {
-      console.log("Player wins! Rock beats scissors");
+      displayWinner.textContent = "==>>";
       playerScore++;
     } else {
       console.log(`Computer wins! ${computerChoice} beats ${playerChoice}`);
+      displayWinner.textContent = "<<==";
       computerScore++;
     }
   }
@@ -41,17 +44,33 @@ function playRound(computerChoice, playerChoice) {
 // showResult.appendChild(resultContent);
 
 const sect = document.querySelector("section");
+const displayWinner = document.querySelector("#displayWinner");
+displayWinner.textContent = "Have fun!";
 const para = document.createElement("p");
+const para2 = document.createElement("p");
 para.textContent = `Have fun playing!`;
+para2.textContent = `Have fun playing!`;
 sect.appendChild(para);
+sect.appendChild(para2);
+
+const playerScoreDisplay = document.getElementById(playerScoreDisplay1);
+const computerScoreDisplay = document.getElementById(computerScoreDisplay1);
+
+playerScoreDisplay.textContent = playerScore;
+computerScoreDisplay.textContent = computerScore;
+
 
 
 function gameOver() {
   if (playerScore === 3) {
-    alert("Player wins!");
+    displayWinner.textContent = "Player wins!";
   } else if (computerScore === 3) {
-    alert("Computer --- wins!");
+    displayWinner.textContent = "Computer --- wins!";
   }
+}
+
+function updateScore() {
+
 }
 
 
@@ -60,22 +79,21 @@ function initiateButtonListeners() {
     playerChoice = "rock";
     para.textContent = `Player choose: ${playerChoice}`;
 
-    let computerChoice = getComputerChoice();
-
-    playRound(computerChoice, playerChoice);
-
+    playRound(getComputerChoice(), playerChoice);
     return playerChoice;
   });
   btnPaper.addEventListener("click", function () {
     playerChoice = "paper";
     para.textContent = `Player choose: ${playerChoice} `;
-    console.log(`Player choose: ${playerChoice}`);
+
+    playRound(getComputerChoice(), playerChoice);
     return playerChoice;
   });
   btnScissors.addEventListener("click", function () {
     playerChoice = "scissors";
     para.textContent = `Player choose: ${playerChoice} `;
-    console.log(`Player choose: ${playerChoice}`);
+
+    playRound(getComputerChoice(), playerChoice);
     return playerChoice;
   });
 
@@ -85,6 +103,7 @@ function getComputerChoice() {
   const randomComputerChoice = Math.random();
   const totalHands = hands.length;
   const randomIndex = Math.floor(randomComputerChoice * totalHands);
+  para2.textContent = `Computer choose: ${hands[randomIndex]} `;
   return hands[randomIndex];
 };
 
