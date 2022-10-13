@@ -35,6 +35,12 @@ section {
     margin-bottom: 1rem;
 }
 
+.display-messages {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
 ul .header {
     font-weight: bold;
     list-style: none;
