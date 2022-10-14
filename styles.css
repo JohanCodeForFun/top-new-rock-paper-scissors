@@ -17,7 +17,6 @@ background: linear-gradient(90deg, rgba(0,0,255,1) 0%, rgba(255,0,0,1) 100%);
 }
 
 .btn-container {
-    margin-top: 8rem;
     display: flex;
     gap: 1rem;
 }
@@ -72,3 +71,10 @@ button {
 button:hover {
     background-color: rgba(0, 255, 0, 0.8);
 }
+
+.confetti{
+    max-width: 640px;
+    display: block;
+    margin: 0 auto;
+    user-select: none;
+ }
