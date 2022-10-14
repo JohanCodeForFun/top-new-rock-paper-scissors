@@ -7,16 +7,16 @@ const btnPaper = document.getElementById("paper");
 const btnScissors = document.getElementById("scissors");
 
 function playRound(computerChoice, playerChoice) {
-  console.log(`Computer choose: ${computerChoice}`);
-  console.log(`Player choose: ${playerChoice}`);
+  // console.log(`Computer choose: ${computerChoice}`);
+  // console.log(`Player choose: ${playerChoice}`);
 
   if (computerChoice === playerChoice) {
-    console.log("It's a tie!");
+    // console.log("It's a tie!");
     displayWinner.textContent = "= = =";
   } else {
     if (computerChoice === "rock" && playerChoice === "paper") {
       displayWinner.textContent = "==>>";
-      console.log("Player wins! Paper beats rock");
+      // console.log("Player wins! Paper beats rock");
       playerScore++;
     } else if (computerChoice === "paper" && playerChoice === "scissors") {
       displayWinner.textContent = "==>>";
@@ -25,15 +25,15 @@ function playRound(computerChoice, playerChoice) {
       displayWinner.textContent = "==>>";
       playerScore++;
     } else {
-      console.log(`Computer wins! ${computerChoice} beats ${playerChoice}`);
+      // console.log(`Computer wins! ${computerChoice} beats ${playerChoice}`);
       displayWinner.textContent = "<<==";
       computerScore++;
     }
   }
 
   gameOver();
+  updateScore(playerScore, computerScore);
   return;
-
 }
 
 
@@ -53,11 +53,8 @@ para2.textContent = `Have fun playing!`;
 sect.appendChild(para);
 sect.appendChild(para2);
 
-const playerScoreDisplay = document.getElementById(playerScoreDisplay1);
-const computerScoreDisplay = document.getElementById(computerScoreDisplay1);
-
-playerScoreDisplay.textContent = playerScore;
-computerScoreDisplay.textContent = computerScore;
+const playerScoreDisplay = document.getElementById("playerScoreDisplay1");
+const computerScoreDisplay = document.getElementById("computerScoreDisplay1");
 
 
 
@@ -69,8 +66,9 @@ function gameOver() {
   }
 }
 
-function updateScore() {
-
+function updateScore(playerScore, computerScore) {
+  playerScoreDisplay.innerHTML = playerScore;
+  computerScoreDisplay.innerHTML = computerScore;
 }
 
 
