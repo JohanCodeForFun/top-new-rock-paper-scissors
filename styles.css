@@ -12,9 +12,12 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background: rgb(0,0,255);
+background: linear-gradient(90deg, rgba(0,0,255,1) 0%, rgba(255,0,0,1) 100%);
 }
 
 .btn-container {
+    margin-top: 8rem;
     display: flex;
     gap: 1rem;
 }
@@ -48,4 +51,24 @@ ul .header {
 }
 li {
     font-weight: 500;
+}
+
+.game-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid black;
+}
+
+button {
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    border: 1px solid black;
+}
+button:hover {
+    background-color: rgba(0, 255, 0, 0.8);
 }
