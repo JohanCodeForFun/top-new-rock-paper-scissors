@@ -1,34 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>New Rock Paper Scissors Game</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
     <script src="app.js" defer></script>
-</head>
-<body>
-    <h1>Rock Paper Scissors Game!</h1>
-    <div class="display-messages">
+  </head>
+  <body>
+    <section class="game-card">
+      <h1>Rock Paper Scissors Game!</h1>
+      <div class="display-messages">
         <h3>Player score: <span id="playerScoreDisplay1">0</span></h3>
-        <h3 id="displayWinner">Have fun! </h3>
+        <h3 id="displayWinner">Have fun!</h3>
         <h3>Computer score: <span id="computerScoreDisplay1">0</span></h3>
-    </div>
+      </div>
 
-    <div class="btn-container">
+      <div class="btn-container">
         <button id="rock">Rock</button>
         <button id="paper">Paper</button>
         <button id="scissors">Scissors</button>
-    </div>
+      </div>
 
-    <section>
+      <section></section>
 
+      <div id="result-container"></div>
     </section>
-
-    <div id="result-container">
-    </div>
-
-</p>
-</body>
+  </body>
 </html>
